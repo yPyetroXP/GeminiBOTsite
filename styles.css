@@ -1,0 +1,66 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2; /* Fundo cinza claro */
+    color: #333333; /* Texto preto */
+    margin: 0; /* Remover margens padrão do body */
+    padding: 0; /* Remover padding padrão do body */
+}
+
+header {
+    background-color: #007bff; /* Azul */
+    color: #ffffff; /* Branco */
+    text-align: center;
+    padding: 20px 0;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Altura mínima igual à altura da viewport */
+}
+
+#bot-info {
+    background-color: #ffffff; /* Branco */
+    border: 1px solid #007bff; /* Azul */
+    width: 90%; /* Largura de 90% da tela */
+    max-width: 400px; /* Largura máxima de 400px para evitar que fique muito largo */
+    padding: 20px;
+    border-radius: 10px; /* Bordas arredondadas */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+#bot-info img {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    width: 150px; /* Tamanho da imagem */
+    height: auto; /* Altura automática para manter a proporção */
+    border-radius: 50%; /* Transforma a imagem em um círculo */
+}
+
+#bot-info h2 {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+#bot-info p {
+    margin-bottom: 15px;
+    text-align: justify; /* Alinhamento justificado */
+}
+
+#bot-info a {
+    display: block;
+    text-decoration: none;
+    background-color: #007bff; /* Azul */
+    color: #ffffff; /* Branco */
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+#bot-info a:hover {
+    background-color: #0056b3; /* Azul mais escuro ao passar o mouse */
+}
