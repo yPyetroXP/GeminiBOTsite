@@ -101,7 +101,7 @@ p {
 .video-container {
     position: relative;
     width: 100%;
-    padding-bottom: 56.25%; /* Proporção do vídeo 16:9 (altura/largura) */
+    height: 400px; /* Altura fixa para o vídeo */
     margin-bottom: 40px; /* Espaço entre o vídeo e o título "Showcase" */
 }
 
