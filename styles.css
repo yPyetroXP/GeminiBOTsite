@@ -84,28 +84,3 @@ p {
 .bot-btn:hover {
     background-color: #0056b3;
 }
-
-/* Adicionando estilos para o novo elemento "showcase" */
-.showcase {
-    text-align: center;
-    margin-top: 40px; /* Espaço entre a seção "bot-info" e a seção "showcase" */
-    margin-bottom: 40px; /* Adicionando margem inferior para separar a seção "showcase" */
-}
-
-.showcase h2 {
-    color: #007bff; /* Cor azul para o título "Showcase" */
-    font-size: 24px;
-    margin-bottom: 20px;
-}
-
-/* Estilos para o vídeo */
-.video-container {
-    position: relative;
-    width: 100%;
-    height: 400px; /* Altura fixa para o vídeo */
-}
-
-.video-container iframe {
-    width: 100%; /* Ocupa toda a largura do contêiner */
-    height: 100%; /* Ocupa toda a altura do contêiner */
-}
