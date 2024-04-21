@@ -81,7 +81,6 @@ p {
     margin-bottom: 10px; /* Adicionando margem inferior para separar os botões */
 }
 
-
 .bot-btn:hover {
     background-color: #0056b3;
 }
@@ -113,4 +112,3 @@ p {
     width: 100%;
     height: 100%;
 }
-
