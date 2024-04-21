@@ -82,6 +82,7 @@ p {
     transition: transform 0.3s, box-shadow 0.3s;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1); /* Sombra padrão */
     margin-bottom: 10px; /* Adicionando margem inferior para separar os botões */
+    background-image: linear-gradient(to bottom, #007bff, #0056b3); /* Gradiente azul */
 }
 
 .bot-btn:hover {
@@ -91,4 +92,3 @@ p {
 .bot-btn:last-child {
     margin-bottom: 0; /* Remove a margem inferior do último botão para evitar espaçamento extra */
 }
-
