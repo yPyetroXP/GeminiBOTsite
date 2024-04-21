@@ -1,5 +1,5 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif; /* Usando Roboto como fonte principal */
     background-color: #f2f2f2; /* Fundo cinza claro */
     color: #333333; /* Texto preto */
     margin: 0; /* Remover margens padrão do body */
