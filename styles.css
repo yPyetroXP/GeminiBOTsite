@@ -80,7 +80,13 @@ p {
     padding: 10px;
     border-radius: 5px;
     transition: background-color 0.3s ease;
+    margin-bottom: 10px; /* Adicionando margem inferior para separar os botões */
 }
+
+.bot-btn:last-child {
+    margin-bottom: 0; /* Remove a margem inferior do último botão para evitar espaçamento extra */
+}
+
 
 .bot-btn:hover {
     background-color: #0056b3;
