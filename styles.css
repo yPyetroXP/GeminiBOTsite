@@ -13,6 +13,10 @@ header {
     padding: 20px 0;
 }
 
+header img {
+    margin-right: 10px;
+}
+
 main {
     display: flex;
     justify-content: center;
@@ -28,6 +32,7 @@ main {
     padding: 20px;
     border-radius: 10px; /* Bordas arredondadas */
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    transition: box-shadow 0.3s ease; /* Efeito de transição suave na sombra */
 }
 
 #bot-info img {
@@ -43,6 +48,7 @@ main {
     text-align: center;
     margin-top: 0;
     margin-bottom: 15px;
+    color: #007bff; /* Azul */
 }
 
 #bot-info p {
@@ -59,8 +65,11 @@ main {
     border-radius: 5px;
     text-align: center;
     transition: background-color 0.3s ease;
+    margin-bottom: 10px; /* Adiciona espaço abaixo dos botões */
 }
 
 #bot-info a:hover {
     background-color: #0056b3; /* Azul mais escuro ao passar o mouse */
+    color: #ffffff; /* Branco */
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2); /* Sombra suave ao passar o mouse */
 }
