@@ -89,6 +89,7 @@ p {
 .showcase {
     text-align: center;
     margin-top: 40px; /* Espaço entre a seção "bot-info" e a seção "showcase" */
+    margin-bottom: 40px; /* Adicionando margem inferior para separar a seção "showcase" */
 }
 
 .showcase h2 {
@@ -102,13 +103,9 @@ p {
     position: relative;
     width: 100%;
     height: 400px; /* Altura fixa para o vídeo */
-    margin-bottom: 40px; /* Espaço entre o vídeo e o título "Showcase" */
 }
 
 .video-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 560%;
-    height: 315%;
+    width: 100%; /* Ocupa toda a largura do contêiner */
+    height: 100%; /* Ocupa toda a altura do contêiner */
 }
