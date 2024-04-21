@@ -71,7 +71,7 @@ p {
 }
 
 .bot-btn {
-    display: block;
+    display: inline-block;
     width: 100%;
     text-align: center;
     text-decoration: none;
@@ -79,15 +79,15 @@ p {
     color: #ffffff;
     padding: 10px;
     border-radius: 5px;
-    transition: background-color 0.3s ease;
-    margin-bottom: 10px; /* Adicionando margem inferior para separar os botões */
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1); /* Sombra padrão */
+}
+
+.bot-btn:hover {
+    transform: translateY(2px); /* Efeito de elevação ao passar o mouse */
 }
 
 .bot-btn:last-child {
     margin-bottom: 0; /* Remove a margem inferior do último botão para evitar espaçamento extra */
 }
 
-
-.bot-btn:hover {
-    background-color: #0056b3;
-}
