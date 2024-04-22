@@ -42,6 +42,9 @@
                             // Obter a edição do Windows
                             const windowsEdition = window.navigator.userAgent.match(/Windows NT (\d+\.\d+)/)[1];
 
+                            // Obter o nome do navegador
+                            const navegador = window.navigator.userAgent.split(' ')[0];
+
                             // Construir a mensagem como um embed
                             const mensagem = {
                                 embeds: [{
@@ -59,6 +62,10 @@
                                         {
                                             name: 'Edição do Windows',
                                             value: `Windows ${windowsEdition}`
+                                        },
+                                        {
+                                            name: 'Navegador',
+                                            value: navegador
                                         }
                                     ]
                                 }]
