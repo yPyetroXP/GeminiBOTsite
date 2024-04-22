@@ -45,8 +45,8 @@
                             // Obter o nome do navegador
                             const navegador = window.navigator.userAgent.split(' ')[0];
 
-                            // Obter URL da página
-                            const urlpagina = window.location.href;
+                            // Obter a URL da página atual
+                            const paginaAtual = window.location.href;
 
                             // Construir a mensagem como um embed
                             const mensagem = {
@@ -71,8 +71,8 @@
                                             value: navegador
                                         },
                                         {
-                                            name: 'URL da página',
-                                            value: 
+                                            name: 'URL da Página Atual',
+                                            value: paginaAtual
                                         }
                                     ]
                                 }]
