@@ -1,18 +1,36 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const userInput = document.getElementById('user-input');
-    const sendBtn = document.getElementById('send-btn');
-    const chatMessages = document.getElementById('chat-messages');
+const express = require('express');
+const fs = require('fs');
 
-    sendBtn.addEventListener('click', function() {
-        sendMessage(userInput.value);
-        userInput.value = '';
+const app = express();
+const port = 3000;
+
+app.get('/login', (req, res) => {
+    const { ip } = req.headers; // Obter o IP do cabeçalho da solicitação
+
+    // Obter os dados do usuário do corpo da solicitação
+    const { discordUserId, discordUsername } = req.body;
+
+    // Salvar os dados do usuário em um arquivo JSON
+    fs.readFile('logins.json', 'utf8', (err, data) => {
+        if (err) {
+            console.error(err);
+            return res.status(500).send('Erro interno do servidor');
+        }
+
+        const logins = JSON.parse(data);
+        logins[ip] = { discordUserId, discordUsername };
+
+        fs.writeFile('logins.json', JSON.stringify(logins), 'utf8', (err) => {
+            if (err) {
+                console.error(err);
+                return res.status(500).send('Erro interno do servidor');
+            }
+
+            res.status(200).send('Login armazenado com sucesso');
+        });
     });
+});
 
-    function sendMessage(message) {
-        const messageElement = document.createElement('div');
-        messageElement.textContent = 'Você: ' + message;
-        chatMessages.appendChild(messageElement);
-        // Aqui você pode adicionar a lógica para enviar a mensagem para o seu bot de Discord
-        // por meio de uma requisição HTTP, WebSocket ou outro método de comunicação.
-    }
+app.listen(port, () => {
+    console.log(`Servidor rodando em http://localhost:${port}`);
 });
