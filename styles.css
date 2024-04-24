@@ -1,7 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+@font-face {
+    font-family: 'Discord Sans';
+    src: url('discord_sans_by_notsoartisty_dduxerr.otf') format('opentype');
+}
 
 body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Discord Sans', sans-serif; /* Alterado para Discord Sans */
     background-color: #2C2F33;
     color: #333333;
     margin: 0;
